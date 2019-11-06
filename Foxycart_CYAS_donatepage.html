@@ -12,9 +12,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <style>
-            /*body {
-                background-color: black;
-                color: white;
+            body {
+                                
+            }
+            h1 {
+                text-align: center;
+                text-shadow: 2px 2px #03a9fc;
             }
             
             legend {
@@ -30,6 +33,15 @@
                 background-color: red;
             }
 
+            input {
+                border-color: #03a9fc;
+            }
+
+            label {
+                font-size: 18px;
+                text-shadow: 1px 1px #03a9fc;
+            }
+
             input[type=checkbox] {
                 vertical-align: middle;
                 position: relative;
@@ -39,15 +51,14 @@
             label[id=receipt] {
                 font-size: 15px;
                 padding-left: .5em;
-            }*/
+            }
             
         </style>
     </head>
     <body>
-            <br><a href="https://www.catholicyoungadultsports.com" target="_self" title="Catholic Young Adult Sports">
-                <img src="/templates/rt_callisto/custom/images/CYAStext.png" alt="Catholic Young Adult Sports" class="mx-auto d-block">
-    </a><br>
-        <div class="container">
+        
+            <h1>Catholic Young Adult Sports Donation</h1>
+            <div class="container">
             <form id="cyasForm" accept-charset="utf-8" action="https://cyas.foxycart.com/cart" method="POST" onload="resetForm()">
                 <input name="name" type="hidden" value="Donation" />
                 <input name="quantity_max" type="hidden" value="1" />
@@ -55,7 +66,7 @@
                 <input name="cart" type="hidden" value="checkout" />
 		        <input name="sub_enddate" type="hidden" value="" />
                 
-                
+            <div class="tab">
                 <section id="myPurpose">
                     <input class="w3-check" type="checkbox" id="chkJoin"/>
                     <label id="donate">I Want to Support a Missionary<br></label>
@@ -72,7 +83,7 @@
                         <option value="Palen_James">Palen, James - CA Outreach Coordinator - Support Team</option>
                         <option value="Syversen_Gunnar">Syversen, Gunnar - CO Outreach Coordinator - Support Team</option>
                         <option value="Townsend_Angela">Townsend, Angela - CO Outreach Coordinator - Support Team</option>
-			   <option value="Yao_Daniel">Yao, Daniel - CA Outreach Coordinator - Support Team</option>
+			            <option value="Yao_Daniel">Yao, Daniel - CA Outreach Coordinator - Support Team</option>
                     </select>
                 </section>
                     <br>
@@ -111,15 +122,15 @@
                             <option value="credit_debit">Debit/Credit Card</option>
                         </select>
                     </section>
-                <br><br> 
-                
+            </div> 
+            <div class="tab">    
                 <h2>Contact Information & Notes</h2>
                     <section>
                             <label>Anonymous Level:</label>
                             <select class="form-control" name="Anonymous Level" id="level">
-                                    <option value="not_necessary" id="nn">Not Necessary</option>
-                                    <option value="Anonymous_pub" id="anonPub">Anonymous in Publications</option>
-                                    <option value="comp_Anony" id="compAnony">Completely Anonymous (No Tax Receipt)</option>
+                                <option value="not_necessary" id="nn">Not Necessary</option>
+                                <option value="Anonymous_pub" id="anonPub">Anonymous in Publications</option>
+                                <option value="comp_Anony" id="compAnony">Completely Anonymous (No Tax Receipt)</option>
                             </select>
                     </section> 
                     <br>
@@ -147,7 +158,7 @@
                             <label for="Prayer Request">Prayer Requests for Our Staff:</label><br>
                             <textarea class="form-control" name="Prayer Intentions" maxlength="500" rows="3" cols="35" id="pray_int" placeholder="We pray nearly everyday for your intentions, would you like to give us something specific for our prayers?"></textarea>(<span id="prayers">500 </span> chars left)
                     </section>
-                
+            </div>    
             
 <br>
 <script data-cfasync="false" src="https://cdn.foxycart.com/cyas/loader.js" async defer></script>

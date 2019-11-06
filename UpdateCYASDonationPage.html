@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <form id="cyasForm" accept-charset="utf-8" action="https://cyas.foxycart.com/cart" method="POST">
+        <input name="name" type="hidden" value="Donation" />
+        <input name="quantity_max" type="hidden" value="1" />
+        <input name="empty" type="hidden" value="true" />
+        <input name="cart" type="hidden" value="checkout" />
+        <input name="sub_enddate" type="hidden" value="" />
+
+        <h1>Catholic Young Adult Sports Donation</h1>
+
+        <!-- Beginning of the Step Form-->
+        <div class="tab">
+            <section id="myPurpose">
+                <input class="w3-check" type="checkbox" id="chkJoin" />
+                <label id="donate">I Want to Support a Missionary<br></label>
+                <br>
+                <select class="custom-select" name="Donation Purpose" id="non_purpose" required autofocus
+                    style="display: block">
+                    <option value="general">General Fund</option>
+                    <option value="mission_trip">Trip: Mission or Pilgrimage</option>
+                    <option value="expansion">Expansion Site</option>
+                </select> 
+            <select class="custom-select" name="Donation Purpose" id="purpose" style="display: none"
+                    disabled>
+                <option value="Francis_Theresa">Francis, Theresa - National Program Director - Support Team</option>
+                <option value="Mann_Anna">Mann, Anna - IL Outreach Coordinator - Support Team</option>
+                <option value="Palen_James">Palen, James - CA Outreach Coordinator - Support Team</option>
+                <option value="Syversen_Gunnar">Syversen, Gunnar - CO Outreach Coordinator - Support Team</option>
+                <option value="Townsend_Angela">Townsend, Angela - CO Outreach Coordinator - Support Team</option>
+                <option value="Yao_Daniel">Yao, Daniel - CA Outreach Coordinator - Support Team</option>
+            </section>
+            <section id="price">
+                <label for="price">Donation Amount:</label><br>
+                <input name="price" required type="text" value="" id="price" placeholder="XXXX.XX" class="form-control" />
+            </section>
+            <br>
+            <section>
+                <label for="cover_processing_fee">Would you like to cover the 3%?</label><br>
+                <select class="form-control" name="Cover Processing Fee" id="cover_fee">
+                    <option value="Yes{y:cover_fee}">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="sub_frequency">Donation Frequency:</label><br>
+                <select name="sub_frequency" id="subFreq" class="form-control">
+                    <option value="1m">Monthly (Preferred)</option>
+                    <option value="3m">Quarterly</option>
+                    <option value="6m">2X Annually</option>
+                    <option value="1y">Annually</option>
+                    <option id="one-time" value="1d">One-time</option>
+                </select>
+                <br>
+                <label id="ss" for="sub_startdate">Start & Recur Date (<i>if today, leave this blank - skip it</i>):</label><br>
+                <input name="sub_startdate" type="text" id="date" value="" class="form-control">
+            </section>
+
+            <section>
+                <label for="Payment_meth">Payment Method:</label><br>
+                <select class="form-control" name="template_set" id="pay_meth">
+                    <option value="DEFAULT">Bank Account ACH (Preferred)</option>
+                    <option value="credit_debit">Debit/Credit Card</option>
+                </select>
+            </section>
+        </div>
+        <div class="tab">
+            <h2>Contact Information and Notes</h2>
+            <section>
+                <label>Anonymous Level:</label>
+                <select class="form-control" name="Anonymous Level" id="level">
+                    <option value="not_necessary" id="nn">Not Necessary</option>
+                    <option value="Anonymous_pub" id="anonPub">Anonymous in Publications</option>
+                    <option value="comp_Anony" id="compAnony">Completely Anonymous (No Tax Receipt)</option>
+                </select>
+            </section>
+            <br>
+                    <section>
+                        <label for="Receive_Email" id="email">Receive Email Updates:</label><br>
+                        <select name="Receive Email Updates" id="email_update" class="form-control">
+                                <option value="Yes" id="emailYes">Yes, Please keep me updated by email.</option>
+                                <option value="No_Only" id="emailNo">No, Please only have my missionary send me newsletters.</option>
+                                <option value="No" id="none">No, I do not need updates on the mission or the missionary.</option>
+                            </select>
+                    </section>
+                    <br>
+                    <section class="form-check-inline">
+                            <input type="checkbox" id="chkTax" name="Tax Receipt" value="yes" checked>
+                            <label for="Tax Receipts" class="taxReceipt" id="receipt">Yes, Please EMAIL MY TAX-RECEIPT in January 
+                            </label>   
+                    </section>
+                    <br><br>
+                    <section>
+                            <label for="Special Notes">Special Notes for Processing Team or Missionary:</label><br>
+                            <textarea class="form-control" name="Special Note" maxlength="500" rows="3" cols="35"  id="spec_note" placeholder="(sample) Keep up the good work! We are praying for you."></textarea>(<span id="note">500 </span> chars left)
+                    </section>
+                    <br>
+                    <section>
+                            <label for="Prayer Request">Prayer Requests for Our Staff:</label><br>
+                            <textarea class="form-control" name="Prayer Intentions" maxlength="500" rows="3" cols="35" id="pray_int" placeholder="We pray nearly everyday for your intentions, would you like to give us something specific for our prayers?"></textarea>(<span id="prayers">500 </span> chars left)
+                    </section>
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>

@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=yes">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 
     <style>
@@ -57,19 +57,39 @@
                     <h4>Selection Donation Amount or Enter Choice Amount</h4>
 
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio"
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="price" value="10.00">
+                        <label class="form-check-label" for="price">$10</label>
                     </div>
-
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="price" value="25.00">
+                        <label class="form-check-label" for="price">$25</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="price" value="50.00">
+                        <label class="form-check-label" for="price">$50</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="priceOther">
+                        <label class="form-check-label" for="priceOther">Other Amount</label>
+                    </div>
+                    
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
-                            placeholder="Enter Donation Amount">
+                        <input type="text" class="form-control" id="price" aria-label="Amount (to the nearest dollar)"
+                            placeholder="Enter Donation Amount" disabled>
                         <div class="input-group-append">
                             <span class="input-group-text">.00</span>
                         </div>
                     </div>
+
+                    <h4>Would you like to cover the 3% fees?</h4>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="cover_fee" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1"></label>
+                    </div>
+
                 </div>
 
 

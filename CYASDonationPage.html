@@ -54,11 +54,11 @@
                 <br>
 
                 <div id="price">
-                    <h4>Selection Donation Amount or Enter Choice Amount</h4>
+                    <h5>Selection Donation Amount or Enter Choice Amount</h5>
 
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="price" value="10.00">
-                        <label class="form-check-label" for="price">$10</label>
+                        <label class="form-check-label" for="price">$15</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="price" value="25.00">
@@ -67,6 +67,10 @@
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="price" value="50.00">
                         <label class="form-check-label" for="price">$50</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="price" value="100.00">
+                        <label class="form-check-label" for="price">$100</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="priceOther">
@@ -84,11 +88,28 @@
                         </div>
                     </div>
 
-                    <h4>Would you like to cover the 3% fees?</h4>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="cover_fee" name="customRadioInline1" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline1"></label>
+                    <h5>Would you like to cover the 3% fees?</h5>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="cover_fee" name="customRadioInline1" class="form-check-input" value="Yes{y:cover_fee}">
+                        <label class="form-check-label" for="customRadioInline1">Yes</label>
                     </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="cover_fee" name="customRadioInline1" class="form-check-input" value="No">
+                        <label class="form-check-label" for="customRadioInline2">No</label>
+                    </div>
+
+                    <h5>Donation Frequency</h5>
+                    
+
+
+                   <!-- <label for="sub_frequency">Donation Frequency:</label><br>
+                        <select name="sub_frequency" id="subFreq" class="form-control">
+                                <option value="1m">Monthly (Preferred)</option>
+                                <option value="3m">Quarterly</option>
+                                <option value="6m">2X Annually</option>
+                                <option value="1y">Annually</option>
+                                <option id="one-time" value="1d">One-time</option>
+                            </select>-->
 
                 </div>
 

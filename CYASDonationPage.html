@@ -32,7 +32,7 @@
 <body>
     
     <div class="container-fluid">
-        <form id="cyasForm" accept-charset="utf-8" action="https://catholicsports.foxycart.com/cart" method="POST">
+        <form id="cyasForm" accept-charset="utf-8" action="https://catholicsports.foxycart.com/cart" method="POST" onload="resetForm()">
             <input name="name" type="hidden" value="Donation" />
             <input name="quantity_max" type="hidden" value="1" />
             <input name="empty" type="hidden" value="true" />
@@ -128,9 +128,9 @@
                             <label class="btn btn-secondary">
                                 <input type="radio" name="sub_frequency" id="subFreq" value="1y">Annually
                             </label>
-                            <label class="btn btn-secondary">
+                            <!--<label class="btn btn-secondary">
                                 <input type="radio" name="sub_frequency" id="one-time" value="1d">One-time Gift
-                            </label>
+                            </label>-->
                         </div>
                     </div>
                 </div>
@@ -328,6 +328,11 @@ function calcEndDate(selectedDate) {
                         <input class="btn btn-primary btn-block" type="submit" value="Continue to Payment Information" id="submit"/>
                     </section>
         </form>
+        <script>
+                function resetForm() {
+                    document.getElementById("cyasForm").reset();
+                }
+            </script>
     </div>
 </body>
 </head>

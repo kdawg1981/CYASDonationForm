@@ -8,18 +8,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
 
     <style>
         h1 {
             text-align: center;
         }
+
+        input[id=submit] {
+            background-color: #1ba7db;
+        }
+
+        .custom-switch input[id=chkTax] {
+            background-color: #1ba7db;
+        }
     </style>
 
 <body>
-    <h1>Catholic Young Adult Sports Donation</h1>
-    <div class="container">
-        <form id="cyasForm" accept-charset="utf-8" action="https://cyas.foxycart.com/cart" method="POST">
+    
+    <div class="container-fluid">
+        <form id="cyasForm" accept-charset="utf-8" action="https://catholicsports.foxycart.com/cart" method="POST">
             <input name="name" type="hidden" value="Donation" />
             <input name="quantity_max" type="hidden" value="1" />
             <input name="empty" type="hidden" value="true" />
@@ -58,9 +70,6 @@
 
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-secondary">
-                            <input type="radio" name="price" id="price" value="15">$15
-                        </label>
-                        <label class="btn btn-secondary">
                             <input type="radio" name="price" id="price" value="25">$25
                         </label>
                         <label class="btn btn-secondary">
@@ -68,6 +77,9 @@
                         </label>
                         <label class="btn btn-secondary">
                             <input type="radio" name="price" id="price" value="100">$100
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="price" id="price" value="200">$200
                         </label>
                     </div>
                     
@@ -86,7 +98,7 @@
                     <h5>Would you like to cover the 3% fees?</h5>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="cover_fee" value="Yes{y:cover_fee}">Yes
+                            <input type="radio" name="options" id="cover_fee" value="Yes{y:cover_fee}" checked>Yes
                         </label>
                         <label class="btn btn-secondary">
                             <input type="radio" name="options" id="cover_fee" value="No">No
@@ -96,43 +108,53 @@
                         <br>
                     </div>
                     
-                    <h5>Donation Frequency</h5>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="sub_frequency" id="subFreq" value="1m">Monthly
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="sub_frequency" id="subFreq" value="3m">Quarterly
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="sub_frequency" id="subFreq" value="6m">2X Annually
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="sub_frequency" id="subFreq" value="1y">Annually
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="sub_frequency" id="one-time" value="1d">One-time
-                        </label>
+                <div class="row">
+                    <div class="col">
+                        <h5>Donation Frequency</h5>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="sub_frequency" id="subFreq" value="1m">Monthly
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="sub_frequency" id="subFreq" value="3m">Quarterly
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="sub_frequency" id="subFreq" value="6m">2X Annually
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="sub_frequency" id="subFreq" value="1y">Annually
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="sub_frequency" id="one-time" value="1d">One-time
+                            </label>
+                        </div>
                     </div>
-                    <div class="row">
+                </div>
+                    
+                <div class="col">
                     <label id="ss" for="sub_startdate">Start & Recur Date (<i>if today, leave this blank - skip it</i>):</label><br>
-                    <input type="text" name="sub_startdate" id="datepicker" value="">
-                    </div>
+                    <input class="form-control" type="text" name="sub_startdate" id="datepicker" value="">
+                </div>
+                    
+
                     <div class="row">
                         <br>
                     </div>
 
-                    
+                    <div class="row">
+                        <div class="col">
                         <h5>Choose your Payment Method:</h5>
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" name="template_set" id="pay_meth" value="DEFAULT" checked>
-                            <label class="custom-control-label" for="pay_meth">Bank Account ACH (Preferred)</label>
+                        <select class="custom-select" name="template_set" id="pay_meth">
+                            <option selected value="DEFAULT">Bank Account ACH (Preferred)</option>
+                            <option value="credit_debit">Debit/Credit Card</option>
+                        </select>
                         </div>
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" name="template_set" id="pay_meth2" value="credit_debit">
-                            <label class="custom-control-label" for="pay_meth2">Debit/Credit Card</label>
-                        </div>
-                </div>
+                    </div>
+                    
+                    <div class="row">
+                        <br>
+                    </div>
+                
             </div>
 
             <div class="tab">
@@ -224,15 +246,12 @@
         });
     </script>
 
-
-
-
     <script>
         $(document).ready(function(){
             $("#submit").click(function(){
-                var value = $("#date").val();
+                var value = $("#datepicker").val();
                 if(value==""){
-                    $("#date").removeAttr("required");
+                    $("#datepicker").removeAttr("required");
                 }
             });
         });
@@ -262,19 +281,19 @@
 
 <script>
 $(function(){ //on document.ready
-    $('#date').datepicker({
+    $('#datepicker').datepicker({
         dateFormat: 'yy-mm-dd',
         onSelect: function (selectedDate, dateField) {
             calcEndDate(selectedDate);
         }
     });
     $("#subFreq").on("change", function () {calcEndDate() });
-    $("#date").on("change", function () {calcEndDate() });
+    $("#datepicker").on("change", function () {calcEndDate() });
 });
 
 function calcEndDate(selectedDate) {
     var endDate = "";
-    selectedDate = selectedDate || $("#date").val();
+    selectedDate = selectedDate || $("#datepicker").val();
     if (selectedDate != "" && jQuery("#one-time").is(":selected")) {
         jQuery("#one-time").val("1d");
 	 var selected = new Date(selectedDate + " 00:00:00"); 
@@ -288,7 +307,7 @@ function calcEndDate(selectedDate) {
 </script>
 
                     <section id="Submit">
-                        <input class="btn-block" type="submit" value="Continue to Payment Information" id="submit"/>
+                        <input class="btn btn-primary btn-block" type="submit" value="Continue to Payment Information" id="submit"/>
                     </section>
         </form>
     </div>

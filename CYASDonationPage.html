@@ -12,6 +12,7 @@
          rel = "stylesheet">
       <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
       <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      
 
 
     <style>
@@ -70,16 +71,19 @@
 
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-secondary">
-                            <input type="radio" name="price" id="price" value="25">$25
+                            <input type="radio" name="price" id="price1" value="25">$25
                         </label>
                         <label class="btn btn-secondary">
-                            <input type="radio" name="price" id="price" value="50">$50
+                            <input type="radio" name="price" id="price2" value="50">$50
                         </label>
                         <label class="btn btn-secondary">
-                            <input type="radio" name="price" id="price" value="100">$100
+                            <input type="radio" name="price" id="price3" value="100">$100
                         </label>
                         <label class="btn btn-secondary">
-                            <input type="radio" name="price" id="price" value="200">$200
+                            <input type="radio" name="price" id="price4" value="200">$200
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="price" id="mbg">My Best Gift
                         </label>
                     </div>
                     
@@ -87,7 +91,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                         </div>
-                        <input type="text" name="price" class="form-control" id="price" aria-label="Amount (to the nearest dollar)"
+                        <input type="text" name="price" class="form-control" id="cPrice" disabled aria-label="Amount (to the nearest dollar)"
                             placeholder="My Best Gift">
                         <div class="input-group-append">
                             <span class="input-group-text">.00</span>
@@ -125,7 +129,7 @@
                                 <input type="radio" name="sub_frequency" id="subFreq" value="1y">Annually
                             </label>
                             <label class="btn btn-secondary">
-                                <input type="radio" name="sub_frequency" id="one-time" value="1d">One-time
+                                <input type="radio" name="sub_frequency" id="one-time" value="1d">One-time Gift
                             </label>
                         </div>
                     </div>
@@ -217,6 +221,20 @@
             var length = $(this).val().length;
             var length = maxLength-length;
             $('#prayers').text(length);
+        });
+    </script>
+    
+    <script>
+        $(function(){
+            $("input[name='price']").click(function() {
+                if($("#mbg").is(":checked")) {
+                    $("#cPrice").removeAttr("disabled");
+                    $("#cPrice").focus();
+                } else {
+                    $("#cPrice").attr("disabled", "disabled");
+               
+                }
+            });
         });
     </script>
 

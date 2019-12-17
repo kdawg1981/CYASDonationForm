@@ -37,7 +37,8 @@
             <input name="quantity_max" type="hidden" value="1" />
             <input name="empty" type="hidden" value="true" />
             <input name="cart" type="hidden" value="checkout" />
-            <input name="sub_enddate" type="hidden" value="" />
+            <input name="sub_enddate" type="hidden" value="1d" />
+            <!--<input name="__sub_startdate" type="hidden" id="subscription_startdate" value="#datepicker" /   >-->
 
             <div class="tab">
             <div class="form-group">
@@ -297,6 +298,8 @@
         });
     </script>
 
+    
+
 <script>
 $(function(){ //on document.ready
     $('#datepicker').datepicker({
@@ -315,13 +318,29 @@ function calcEndDate(selectedDate) {
     if (selectedDate != "" && jQuery("#one-time").is(":selected")) {
         jQuery("#one-time").val("1d");
 	 var selected = new Date(selectedDate + " 00:00:00"); 
-	 selected.setDate(selected.getDate() + 1);	
+	 selected.setDate(selected.getDate() + 0);	
         endDate = selected.getFullYear() + "-" + ("0"+(selected.getMonth()+1)).slice(-2) + "-" + ("0" + selected.getDate()).slice(-2);	
     } else {	
-        jQuery("#one-time").val("");
+        jQuery("#one-time").val("1d");
     }
     $("input[name='sub_enddate']").val(endDate);
 }
+</script>
+<script>
+   /* function toggleSubscription() {
+        if (jQuery("#subFreq").val() == "1d") {
+            jQuery("#subscription_startdate").attr("name", "__sub_startdate");
+        } else {
+            jQuery("#subscription_startdate").attr("name", "sub_startdate");
+        }
+    }
+
+    jQuery(document).ready(function() {
+        jQuery("#subFreq").change(function() {
+            toggleSubscription();
+        });
+        toggleSubscription();
+    });*/
 </script>
 
                     <section id="Submit">

@@ -38,6 +38,8 @@
             <input name="empty" type="hidden" value="true" />
             <input name="cart" type="hidden" value="checkout" />
             <input name="sub_enddate" type="hidden" value="1d" />
+            <input name="sub_enddate" type="hidden" value="" />
+            
             <!--<input name="__sub_startdate" type="hidden" id="subscription_startdate" value="#datepicker" /   >-->
 
             <div class="tab">
@@ -130,7 +132,7 @@
                                 <input type="radio" name="sub_frequency" id="subFreq" value="1y">Annually
                             </label>
                             <label class="btn btn-secondary">
-                                <input type="radio" name="sub_frequency" id="one-time" value="1d">One-time Gift
+                                <input type="radio" name="sub_frequency" id="one-time" value="">One-time Gift
                             </label>
                         </div>
                     </div>
@@ -308,7 +310,7 @@ $(function(){ //on document.ready
             calcEndDate(selectedDate);
         }
     });
-    $("#subFreq").on("change", function () {calcEndDate() });
+    $("#one-time").on("change", function () {calcEndDate() });
     $("#datepicker").on("change", function () {calcEndDate() });
 });
 
